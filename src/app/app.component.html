@@ -1,3 +1,40 @@
+<h1>Juego de adivinación de Números Aleatorios - DWEC05</h1>
+<hr>
+<h2>Parámetros de configuración del juego</h2>
+<form (ngSubmit)="onSubmit()">
+    <label for="Nombre">Nombre: </label>
+    <br>
+    <input type="text" id="Nombre" [(ngModel)]="formData.nombre" name="Nombre" required>
+    <br>
+    <label for="Apellidos">Apellidos: </label>
+    <br>
+    <input type="text" id="Apellidos" [(ngModel)]="formData.apellidos" name="Apellidos" required>
+    <br>
+    <label for="Rango">Rango de números a generar: </label>
+    <br>
+    <input type="text" id="Rango" [(ngModel)]="formData.rango" name="Rango" required>
+    <br>
+    <label for="Intentos">Número de intentos: </label>
+    <br>
+    <input type="text" id="Intentos" [(ngModel)]="formData.intentos" name="Intentos" required>
+    <br>
+    <button type="submit">Recoger datos</button>
+</form>
+<div *ngIf="submitted">
+    <hr>
+    <h2>Ongi Etorri {{formData.nombre}} {{formData.apellidos}}</h2>
+    <label for="Numero">Introduce el Número a Adivinar: </label>
+    <br>
+    <input type="number" id="numero" [(ngModel)]="numero">
+    <br>
+    <p>Intentos restantes: {{intentos}}</p>
+    <p>{{adivinado}}</p>
+    <button (click)="enviar()">Enviar</button>
+    <p>{{mensaje}}</p>
+    <ul>
+        <li *ngFor="let item of tiradas">{{item}}</li>
+    </ul>
+</div>
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
 <!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
@@ -5,7 +42,7 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
 <!-- * * * * * * * to get started with your project! * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 
 <style>
   :host {
@@ -323,7 +360,7 @@
     </div>
   </div>
 </main>
-
+-->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
@@ -332,5 +369,6 @@
 <!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-
+<!--
 <router-outlet />
+-->
